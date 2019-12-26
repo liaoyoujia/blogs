@@ -1,0 +1,57 @@
+/*
+Write your variables here. All available variables can be
+found in element-ui/packages/theme-chalk/src/common/var.scss.
+For example, to overwrite the theme color:
+*/
+// @import '@/styles/entry.scss';
+
+// $--color-primary: $red;
+
+// /* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+@import '~element-ui/packages/theme-chalk/src/index';
+
+// // 输入组件禁止状态的背景色
+// .el-button--primary.is-disabled {
+//   &,
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     background: #777;
+//   }
+// }
+
+// // message-box
+// .el-message-box {
+//   width: 354px;
+//   height: 234px;
+//   box-sizing: border-box;
+//   .el-message-box__header {
+//     height: 62px;
+//     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAFcElEQVRogdXae4xcVR3A8c9OF6ELSqGlJUNbYZOmpQQfjQYUsC2CpAkJ0RQpMKGCJgYkVGMNkOADMGIif7QkKEgwCLtAQlBIeMijUB7hoTa0f0Bb0Umo7aK2sbZSFArWP36z3end2Zm5c88M+k0mO+fsuef3+80999zf4/Qdd9c2iTkS87EIs2vfj8HBmFwb86/aZws2oYq12Ii38girVspN/9+fZ7ImzMSZOAenYFqL8VNqfwfFDzHKNjyHB/EYdhZVrKiBH8cVWIqPFFVG3Olltc9fcRduxR87nbDU4XWH42asxyXSGJdlBlaKJXwDDulkkk4M/Dpew2WdCOyASbhKPJ9fy3txHgMPwhBuQfMnuzsci9swLDastmjXwBl4GRfmVis9F+C3OLqdwe0YeDx+h08WUCo1HxM6zW01sJWB88Sdm5VAqdTMxEuDQyNzmg1qZuBRWIMPp9QqMVOwZnBo5IiJBkxk4CTxwv0gNpO8zBJOQUP6JnDV7sb5iRT4M94Qbtk/hLt2NE4UyywVN1Ur5RXZzkYGLscdBYXtwC/xAF7BngZjDsNCfEV4Qik4s1opP1nfkV2ih+KnBYX8RtydlXheY+MIp/phnCsM3VxQLg1uTNbA1RgoIGAYS/CXTP9k8ZpZJIzP8iwWYF0B2XDM4NDItfUd9Ut0tnhWOmUdPpXpOwTX4cv4aF3/q8IrWZ0Zf6gInaYX0ON9TK1Wyrs48A5eU2BSxns5A3gR33GgcXACVgnXr549uLKgHpNw+Whj1MDDcVGBSR83/hn6FT7R4roLcWOm7w4RFxbhisGhkYMYM/BcORzYBgxn2mfgrDav/Tay3sijBXQhlvgSxgxcVnDCFzPt5TmvPzvTTrGjnk8YOAWnFphoC17P9J2Wc47sM/rPztXZz+mDQyP9JXxWseWZTXvMMl7hVvw9057auTr7mY4FJXy64ERl/EIEpMcLDyYv92fanymo0yiL+0VmqygX4zzxQu/Lee0PxXtxlKn4fAKdYF4/jks0WSce0O34bqbvJ8byp0WZXRJx3wfBzcYnkZaK1ZCKmSXFfM9O+bE6b6PGYtyXWM5Av/BieskK3JTpWyIii9QMlPCfLkw8Ed833riL8Yj8m1NblKR5qbbDEyKyqOcy8YrpFm+V8HYXBYyyD5dm+r4kNppusqeEN7sshLh7f6prT8M9PZC7taRA5SYHj2fal+NDPZBbLYkIuuuCMu2FPZAJm0t4oQeCdtV979NmXSEBz5dEaj7rzaemviy9T1Squs0OrC/hHTzVZWH1tY0BacKhVjxTrZT3jkb093ZZ2A34gnj2HjRWo+8mw4wFqw+Jgv+ERYyCzNGkftAFtgub9udk3sHPuix0kzgq0gtWVSvlvRyYF70R73VJ4GoR7S+ufSZK56fgXXX+br2BO0UYk5qd+GZde63xacaU/KhaKe/ftbO1iR+I8ykpaRQldCVyEDWR6+s7sga+L21ETeyYq+rai8RBgm7w1WqlfED416jC+6j0G84KUTFeg6dFkSU1P69Wyo9kOyeq8MIGcZrh/4H11Uq54SmQZocQzlC8CNILtomDgA1pZuB2kZ/sVcTfCbtwerVS3jHRgFbnZDbjZOMrtv8LbMFJ1Ur5D80GtXPS6TWR3t+QQqtEPCeqyS2rUO2eVdsqjCx6QCEFq/A58Qi1JM9pw734Br4o/Mpes1Ekqr6V56JOzos+IM5hX6c3Gbnd+F5N5q/zXtzpid99Iok7V/ivIx3O04y/1eaeK+N+5aFTA0fZiqtFpLBcZKh3F5hvpwiIl9fmvFrBHTzVqfvduLP2mS6W00JxFm2+KJIeLNIV+8TS/rdw7N8QP9Qa/F7kUpLxX0cQBeVbYrjGAAAAAElFTkSuQmCC')
+//       center bottom no-repeat;
+//   }
+//   .el-message-box__content {
+//     text-align: center;
+//     padding: 24px;
+//   }
+//   .el-message-box__btns {
+//     text-align: center;
+//     .el-button {
+//       width: 114px;
+//       border-radius: 100px;
+//     }
+//     .el-button:first-child {
+//       margin-right: 40px;
+//     }
+//   }
+// }
+
+// .el-select-dropdown.is-multiple .el-select-dropdown__item.selected::after {
+//   content: '\e6da';
+// }
+
+// .el-tooltip__popper {
+//   right: 40px !important;
+//   left: 300px !important;
+// }
