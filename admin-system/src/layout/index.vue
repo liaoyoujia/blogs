@@ -13,21 +13,22 @@
         <el-menu-item index="/comment">
           评论
         </el-menu-item>
-        <el-menu-item index="/me">
-          关于我
-        </el-menu-item>
       </el-menu>
 
       <el-dropdown class="right-menu"
-        size="medium">
+        size="medium"
+        @command="handleCommand">
         <div class="avater-wrapper">
           <el-avatar :src="logo"></el-avatar>
         </div>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>Github</el-dropdown-item>
-          <el-dropdown-item>QQ</el-dropdown-item>
-          <el-dropdown-item>WeChat</el-dropdown-item>
-          <el-dropdown-item divided>注销</el-dropdown-item>
+          <el-dropdown-item command="github">Github</el-dropdown-item>
+          <el-dropdown-item divided
+            v-if="token&&token.length"
+            command="cancellate">注销</el-dropdown-item>
+          <el-dropdown-item divided
+            v-else
+            command="login">登录</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </el-header>
@@ -42,13 +43,23 @@
 
 <script>
 import logo from '../assets/logo.jpg'
+import { removeStore } from '@/utils/store' // get token from cookie
+import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
     return {
       logo
     }
   },
+  computed: {
+    ...mapState({
+      token: state => state.token
+    })
+  },
   methods: {
+    ...mapMutations([
+      'resetToken'
+    ]),
     activeMenu () {
       const route = this.$route
       const { path } = route
@@ -59,6 +70,21 @@ export default {
         }
       }
       return routePath[0]
+    },
+    handleCommand (type) {
+      switch (type) {
+        case 'github':
+          window.location.href = 'https://github.com/liaoyoujia/blogs'
+          break
+        case 'cancellate':
+          removeStore('token')
+          this.resetToken()
+          this.$router.push({ name: 'login' })
+          break
+        case 'login':
+          this.$router.push({ name: 'login' })
+          break
+      }
     }
   }
 }

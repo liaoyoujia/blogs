@@ -77,8 +77,7 @@ export default {
           if (res.errno === 0) {
             setStore('token', res.message)
             this.getToken(res.message)
-            console.log(this.$store.state, 787887)
-            // this.$router.push({ name: 'layout' })
+            this.$router.push({ name: 'layout' })
           }
         } else {
           return false

@@ -46,12 +46,6 @@ export default new Router({
           name: 'comment',
           component: () => import('@/views/Comment.vue'),
           meta: { title: 'comment' }
-        },
-        {
-          path: 'me',
-          name: 'me',
-          component: () => import('@/views/Me.vue'),
-          meta: { title: 'me' }
         }
       ]
     }

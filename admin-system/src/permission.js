@@ -1,11 +1,12 @@
 import router from './router'
 import NProgress from 'nprogress' // progress bar
+import store from './store'
 import 'nprogress/nprogress.css' // progress bar style
 import { getStore } from '@/utils/store' // get token from cookie
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-const whiteList = ['/login', '/index', '/', '/comment', '/me'] // no redirect whitelist
+const whiteList = ['/login', '/index', '/', '/comment', '/index/detail', '/me'] // no redirect whitelist
 
 router.beforeEach(async (to, from, next) => {
   // start progress bar
@@ -15,6 +16,9 @@ router.beforeEach(async (to, from, next) => {
   const hasToken = getStore('token')
 
   if (hasToken) {
+    if (!store.state.token || !store.state.token.length) {
+      store.commit('getToken', hasToken)
+    }
     if (to.path === '/login') {
       next({ path: '/' })
       NProgress.done()
