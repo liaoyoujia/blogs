@@ -1,6 +1,6 @@
 // vue 项目配置文件
 module.exports = {
-  // publicPath: './', // 所有的资源都会被链接为相对路径
+  publicPath: '/blog/', // 所有的资源都会被链接为相对路径
   devServer: {
     port: 9102,
     proxy: {
