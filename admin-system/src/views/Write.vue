@@ -1,7 +1,7 @@
 <template>
   <el-card class="write-blog">
     <div slot="header">
-      <h2>创作中...</h2>
+      <h2>创作中。。。</h2>
     </div>
     <el-form :model="blogForm"
       :rules="rules"

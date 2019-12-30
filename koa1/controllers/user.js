@@ -22,6 +22,7 @@ class Users {
     const token = jsonwebtoken.sign({ _id, name }, secret, { expiresIn: 60 });
     ctx.body = new SuccessModel(token)
   }
+
   async list (ctx) {
     const data = await User.find()
     ctx.body = data
@@ -41,6 +42,13 @@ class Users {
     comments.push(commentItems)
     await user[0].updateOne({ comments });
     ctx.body = new SuccessModel(user);
+  }
+
+  //评论列表
+  async commentList (ctx) {
+    const user = await User.find()
+    const comments = user[0]['comments'] || []
+    ctx.body = new SuccessModel(comments);
   }
 }
 

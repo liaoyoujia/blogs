@@ -28,7 +28,6 @@
           </li>
         </ul>
       </div>
-      <!-- dateList&&dateList.length -->
       <div class="category-pane"
         v-if="false">
         <h6>时间排序</h6>

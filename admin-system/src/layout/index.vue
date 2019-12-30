@@ -19,10 +19,15 @@
         size="medium"
         @command="handleCommand">
         <div class="avater-wrapper">
-          <el-avatar :src="logo"></el-avatar>
+          <el-avatar :src="logo"
+            v-if="token&&token.length"></el-avatar>
+          <el-avatar :src="circleUrl"
+            v-else></el-avatar>
         </div>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="github">Github</el-dropdown-item>
+          <el-dropdown-item command="comment"
+            v-if="token&&token.length">信箱</el-dropdown-item>
           <el-dropdown-item divided
             v-if="token&&token.length"
             command="cancellate">注销</el-dropdown-item>
@@ -48,7 +53,8 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
     return {
-      logo
+      logo,
+      circleUrl: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
     }
   },
   computed: {
@@ -83,6 +89,9 @@ export default {
           break
         case 'login':
           this.$router.push({ name: 'login' })
+          break
+        case 'comment':
+          this.$router.push({ name: 'comment' })
           break
       }
     }

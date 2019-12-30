@@ -3,10 +3,12 @@
     <div slot="header">
       <h2>留言箱。。。</h2>
     </div>
+    <comment-list v-if="token&&token.length"></comment-list>
     <el-form :model="blogForm"
       :rules="rules"
       ref="blogForm"
-      class="blog-form">
+      class="blog-form"
+      v-else>
       <el-form-item prop="commentItems">
         <el-input type="textarea"
           v-model="blogForm.commentItems"
@@ -22,6 +24,8 @@
 
 <script>
 import { reqAddComment } from '@/plugins/axios/index'
+import CommentList from './components/CommentList'
+import { mapState } from 'vuex'
 export default {
   data () {
     return {
@@ -34,6 +38,14 @@ export default {
         ]
       }
     }
+  },
+  computed: {
+    ...mapState({
+      token: state => state.token
+    })
+  },
+  components: {
+    CommentList
   },
   methods: {
     submitForm (formName) {
@@ -62,7 +74,6 @@ export default {
 
 }
 </script>
-
 <style scoped lang="scss">
 .write-blog {
   width: 100%;

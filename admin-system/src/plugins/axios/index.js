@@ -11,6 +11,8 @@ export const reqAddComment = (data = {}) => http({ url: 'api/users/comment', met
 export const reqTagAndTimeList = (data = {}) => http({ url: '/api/blogs/types', method: 'GET', params: data })
 // 单篇博客
 export const reqBlogItem = (data = {}) => http({ url: '/api/blogs/item', method: 'GET', params: data })
+// 评论列表
+export const reqCommentList = (data = {}) => http({ url: '/api/users/getcomlist', method: 'GET', params: data })
 
 // 上传接口
 export const reqUploads = (data = {}) => {
